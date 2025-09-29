@@ -1,15 +1,18 @@
 import React from 'react'
 import Hero from './components/Hero'
 import ProfessionBar from './components/ProfessionBar'
-import HomeWorks from './components/HomeWorks'
+import HomeProjects from './components/HomeProjects'
+import HomeAbout from './components/HomeAbout'
+import Contact from '@/features/contact/presentation/Contact'
 
 function Home() {
     return (
         <div className='bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000]'>
             <Hero />
             <ProfessionBar />
-            <HomeWorks />
-
+            <HomeProjects />
+            <HomeAbout />
+            <Contact />
 
             {/* Decorative Gradient Overlay */}
             <div className="absolute inset-0 pointer-events-none z-0">

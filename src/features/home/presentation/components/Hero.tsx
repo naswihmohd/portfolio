@@ -1,46 +1,107 @@
+"use client"
+
 import React from "react";
+import { motion } from "framer-motion";
 import myPic from "@/asset/images/naswih.webp";
+import { FaInstagram, FaLinkedin, FaFacebook, FaWhatsapp, FaGithub } from "react-icons/fa";
+import { SocialLinks } from "@/general/constants/Constants";
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
+    const socialLinks = [
+        { icon: FaLinkedin, label: "LinkedIn", href: SocialLinks.LINKEDIN },
+        { icon: SiLeetcode, label: "Leetcode", href: SocialLinks.LEETCODE },
+        { icon: FaGithub, label: "Github", href: SocialLinks.GITHUB },
+        { icon: FaInstagram, label: "Instagram", href: SocialLinks.INSTAGRAM },
+        { icon: FaFacebook, label: "Facebook", href: SocialLinks.FACEBOOK },
+        { icon: FaWhatsapp, label: "WhatsApp", href: SocialLinks.WHATSAPP },
+    ];
+
     return (
-        <section className="relative w-full mx-auto max-w-7xl min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12 overflow-hidden">
+        <section className="relative w-full mx-auto max-w-7xl min-h-[600px] flex flex-col md:flex-row items-center justify-between px-4 md:px-16 py-12 overflow-hidden">
             {/* Left: Text Content */}
-            <div className="flex-1 order-2 md:order-1 flex flex-col items-start justify-center z-10 max-w-xl">
-                <h1 className=" font-semibold pt-16 md:pt-0 md:text-xl text-base text-white mb-4 leading-tight">
+            <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="flex-1 order-2 md:order-1 flex flex-col items-start justify-center z-10 max-w-xl"
+            >
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    className=" font-semibold pt-16 md:pt-0 md:text-xl text-base text-white mb-4 leading-tight"
+                >
                     Hello, my name is <br />
-                    <span className="text-2xl md:text-5xl font-bold">Muhammed Naswih</span>
-                </h1>
-                <p className="text-sm md:text-lg text-gray-200/80 mb-4">
-                    I am a Creative Developer who is currently based in Kerala, India.
-                </p>
-                <div className="flex flex-wrap gap-4 mb-8">
-                    <span className="py-2 rounded-full text-white font-semibold text-sm flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 18v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2m16-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0a2 2 0 01-2 2H6a2 2 0 01-2-2" /></svg>
-                        Developer
-                    </span>
-                    <span className="py-2 rounded-full text-white font-semibold text-sm flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 17l4-4-4-4m8 8V7a4 4 0 00-4-4H6a4 4 0 00-4 4v10a4 4 0 004 4h6a4 4 0 004-4z" /></svg>
-                        Speaker
-                    </span>
-                    <span className="py-2 rounded-full text-white font-semibold text-sm flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" /></svg>
-                        Writer
-                    </span>
-                </div>
-            </div>
+                    <motion.span
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                        className="text-2xl md:text-5xl font-bold"
+                    >
+                        Muhammed Naswih
+                    </motion.span>
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                    className="text-sm md:text-base text-gray-200/80 mb-4"
+                >
+                    Full Stack Developer (MERN) | Building High-Performance, Scalable & User-Centric Web Applications
+                </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                    className="flex flex-wrap gap-4 mb-8"
+                >
+                    {socialLinks.map((social, index) => {
+                        const IconComponent = social.icon;
+                        return (
+                            <motion.a
+                                key={social.label}
+                                href={social.href}
+                                whileHover={{ scale: 1.1, y: -3 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                            >
+                                <IconComponent className="w-5 h-5" />
+                            </motion.a>
+                        );
+                    })}
+                </motion.div>
+            </motion.div>
             {/* Right: Profile Image */}
-            <div className="flex-1 md:order-2 order-1 flex items-center justify-center mt-10 md:mt-0 z-10">
-                <div className="w-64 h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-[#370471] flex items-center justify-center">
+            <motion.div
+                initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                className="flex-1 md:order-2 order-1 flex items-center justify-center mt-10 md:mt-0 z-10"
+            >
+                <motion.div
+                    whileHover={{
+                        scale: 1.05,
+                        rotateY: 5,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="w-64 h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-[#370471] flex items-center justify-center"
+                >
                     {/* Replace src with your own image */}
-                    <img
+                    <motion.img
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
                         src={myPic.src}
                         alt="Profile"
                         className="object-cover w-full h-full"
-
-
                     />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

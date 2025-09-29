@@ -2,27 +2,31 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCodepen, FaDribbble, FaGithub, FaMoon, FaSun, FaTwitch, FaTwitter } from 'react-icons/fa';
-import { SiCodesandbox } from 'react-icons/si';
+import { FaGithub, FaMoon, FaSun, FaTwitter, FaLinkedin, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
+import NavLink from './components/NavLink';
+import { SocialLinks } from '../../../general/constants/Constants';
 
 const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Work', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
 ];
 
 const socialIcons = [
-    { icon: <FaTwitter />, href: '#' },
-    { icon: <FaTwitch />, href: '#' },
-    { icon: <FaGithub />, href: '#' },
-    { icon: <FaCodepen />, href: '#' },
-    { icon: <SiCodesandbox />, href: '#' },
-    { icon: <FaDribbble />, href: '#' },
+    { icon: <FaTwitter />, href: SocialLinks.TWITTER },
+    { icon: <FaGithub />, href: SocialLinks.GITHUB },
+    { icon: <FaLinkedin />, href: SocialLinks.LINKEDIN },
+    { icon: <FaInstagram />, href: SocialLinks.INSTAGRAM },
+    { icon: <FaFacebook />, href: SocialLinks.FACEBOOK },
+    { icon: <FaWhatsapp />, href: SocialLinks.WHATSAPP },
+    { icon: <SiLeetcode />, href: SocialLinks.LEETCODE },
 ];
 
 export default function Navbar() {
     const [darkMode, setDarkMode] = useState(true);
-    const [active, setActive] = useState('Home');
+    // Using pathname-based active state in NavLink component
 
     // Toggle dark/light mode
     const toggleTheme = () => {
@@ -37,60 +41,38 @@ export default function Navbar() {
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, type: 'spring' }}
-            className="w-full px-4 py-4 flex items-center justify-between backdrop-blur-md bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000] shadow-lg"
+            className="w-full px-4 py-6 backdrop-blur-md bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000] shadow-lg"
         >
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-                <span className="text-purple-400 text-2xl">
-                    <FaCodepen />
-                </span>
-                <span className="font-bold text-lg text-white dark:text-white">Jeanine White</span>
-            </div>
 
-            {/* Nav Links */}
-            <div className="hidden md:flex items-center gap-2 bg-gradient-to-r from-purple-900/60 to-gray-900/60 dark:from-purple-700/40 dark:to-gray-700/40 rounded-full px-2 py-1">
-                {navLinks.map((link) => (
-                    <button
-                        key={link.name}
-                        onClick={() => setActive(link.name)}
-                        className={`relative px-5 py-2 rounded-full font-semibold transition-colors duration-200 focus:outline-none text-white dark:text-white ${active === link.name
-                            ? 'bg-gradient-to-r from-[#5204ab] to-[#370471] shadow-lg'
-                            : 'hover:bg-purple-800/40'
-                            }`}
-                    >
-                        {link.name}
-                    </button>
-                ))}
-            </div>
-
-            {/* Social Icons & Theme Toggle */}
-            <div className="flex items-center gap-3">
-                <div className="hidden md:flex items-center gap-3 text-white text-lg">
-                    {socialIcons.map((item, idx) => (
-                        <motion.a
-                            key={idx}
-                            href={item.href}
-                            whileHover={{ scale: 1.2, color: '#fff' }}
-                            className="transition-colors duration-200"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {item.icon}
-                        </motion.a>
+            <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
+                <div className="flex items-center text-white gap-8">
+                    {navLinks.map((link) => (
+                        <NavLink key={link.href} title={link.name} href={link.href} />
                     ))}
                 </div>
-                <button
-                    onClick={toggleTheme}
-                    className="ml-2 p-2 rounded-full bg-black/30 dark:bg-white/20 text-white hover:bg-purple-700/40 transition-colors duration-200"
-                    aria-label="Toggle theme"
-                >
-                    {darkMode ? <FaMoon size={18} /> : <FaSun size={18} />}
-                </button>
-            </div>
 
-            {/* Mobile Nav */}
-            <div className="md:hidden flex items-center gap-2">
-                {/* Add a hamburger menu and mobile nav if needed */}
+                {/* Social Icons & Theme Toggle */}
+                <div className="flex items-center gap-3">
+                    <div className="hidden md:flex items-center gap-3 text-white text-lg">
+                        {socialIcons.map((item, idx) => (
+                            <motion.a
+                                key={idx}
+                                href={item.href}
+                                whileHover={{ scale: 1.2, color: '#fff' }}
+                                className="transition-colors duration-200"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {item.icon}
+                            </motion.a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Mobile Nav */}
+                <div className="md:hidden flex items-center gap-2">
+                    {/* Add a hamburger menu and mobile nav if needed */}
+                </div>
             </div>
         </motion.nav>
     );
