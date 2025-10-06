@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LoadImage from "@/general/components/LoadImage";
 import { projects } from "@/features/projects/data/projectData";
+import Link from "next/link";
 
 const HomeProjects = () => {
     const [current, setCurrent] = useState(0);
@@ -55,10 +56,10 @@ const HomeProjects = () => {
                         <p className="text-gray-300 text-base md:text-lg mb-6 max-w-lg">
                             Each project reflects creativity, passion, and the drive to craft impactful digital experiences.
                         </p>
-                        <button className="bg-gradient-to-r from-[#5e04c6] to-[#370471] hover:bg-gradient-to-l hover:from-[#370471] hover:to-[#5e04c6] transition-all duration-300 text-white font-semibold px-8 py-3 rounded-full shadow-lg cursor-pointer flex items-center gap-2 self-start md:self-auto">
+                        <Link href="/projects" className="bg-gradient-to-r from-[#5e04c6] to-[#370471] hover:bg-gradient-to-l hover:from-[#370471] hover:to-[#5e04c6] transition-all duration-300 text-white font-semibold px-8 py-3 rounded-full shadow-lg cursor-pointer flex items-center gap-2 self-start md:self-auto">
                             Explore Projects
                             <span className="ml-2">→</span>
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Right: Single Mockup with Animation */}

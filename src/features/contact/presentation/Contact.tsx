@@ -64,7 +64,7 @@ export default function Contact() {
 
     return (
 
-        <section className="relative w-full min-h-screen bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000] py-32 px-4 md:px-16">
+        <section className="relative overflow-hidden w-full min-h-screen bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000] py-32 px-4 md:px-16">
             {/* Decorative Gradient Overlay */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-[#b97aff]/30 to-transparent rounded-full blur-3xl" />
