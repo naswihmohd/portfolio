@@ -52,7 +52,7 @@ const HomeAbout = () => {
                             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
                             src={myPic2.src}
                             alt="Profile"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full mt-8"
                         />
                     </motion.div>
                 </motion.div>

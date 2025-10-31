@@ -27,7 +27,7 @@ function Projects() {
             </motion.div>
 
             {/* Projects List */}
-            <div className="relative z-10 max-w-6xl mx-auto">
+            <div className="relative z-10 overflow-hidden max-w-6xl mx-auto">
                 <div className="relative">
                     {projects.map((project, index) => (
                         <motion.div

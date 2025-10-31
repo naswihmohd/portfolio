@@ -36,8 +36,8 @@ export default function Contact() {
 
     const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
-        const message = `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\nMessage: ${data.message}`;
-        const subject = 'New Message from Contact Form';
+        const message = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage: ${data.message}`;
+        const subject = data.subject;
         const body = encodeURIComponent(message);
         window.open(`mailto:${email}?subject=${subject}&body=${body}`, '_blank');
         reset();
