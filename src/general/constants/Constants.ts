@@ -20,7 +20,7 @@ export class AboutMe {
 
 export class Constants {
     static readonly APP_NAME = "Muhammed Naswih"
-    static readonly META_DESCRIPTION = "Naswih Mohd is a software engineer with a passion for building web applications."
+    static readonly META_DESCRIPTION = "Full Stack Developer (MERN) | Building High-Performance, Scalable & User-Centric Web Applications"
     static readonly D0MAIN_NAME = "http://naswih.vercel.app"
     static readonly APP_LOGO = "/logo.png"
 }
