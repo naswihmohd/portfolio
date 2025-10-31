@@ -3,18 +3,23 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaDownload, FaCalendarAlt, FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaUser } from "react-icons/fa";
-import myPic2 from "@/asset/images/naswih-removebg-preview.png";
+import myPic2 from "@/asset/images/about-image.png";
 import { AboutMe } from "@/general/constants/Constants";
+import cvFile from "@/asset/cv/CV - Muhammed Naswih.pdf";
 
 const HomeAbout = () => {
     const personalDetails = [
         { icon: FaCalendarAlt, label: "Birthday", value: AboutMe.BIRTHDAY },
         { icon: FaPhone, label: "Phone", value: AboutMe.PHONE_NUMBER },
-        { icon: FaEnvelope, label: "Email", value:AboutMe.EMAIL },
+        { icon: FaEnvelope, label: "Email", value: AboutMe.EMAIL },
         { icon: FaMapMarkerAlt, label: "From", value: AboutMe.ADDRESS },
         { icon: FaGlobe, label: "", value: AboutMe.LANGUAGE },
         { icon: FaUser, label: "Freelance", value: AboutMe.FREELANCE }
     ];
+
+    const handleDownloadCV = () => {
+        window.open("/CV - Muhammed Naswih.pdf", '_blank');
+    }
 
     return (
         <section className="px-4 md:px-16 pt-32">
@@ -120,6 +125,7 @@ const HomeAbout = () => {
                             transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
+                            onClick={handleDownloadCV}
                             className="flex items-center bg-gradient-to-r from-[#5e04c6] to-[#370471] gap-3 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg"
                         >
                             <FaDownload className="w-5 h-5" />

@@ -17,3 +17,10 @@ export class AboutMe {
     static readonly FREELANCE = "Available"
     static readonly WORKED_AT = "TOTAL-X SOFTWERE"
 }
+
+export class Constants {
+    static readonly APP_NAME = "Muhammed Naswih"
+    static readonly META_DESCRIPTION = "Naswih Mohd is a software engineer with a passion for building web applications."
+    static readonly D0MAIN_NAME = "http://naswih.vercel.app"
+    static readonly APP_LOGO = "/logo.png"
+}

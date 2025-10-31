@@ -1,6 +1,5 @@
 import HomeAbout from '@/features/home/presentation/components/HomeAbout'
 import React from 'react'
-import Education from './components/Education'
 
 const About = () => {
     return (

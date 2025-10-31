@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const socialIcons = [
-    { icon: <FaTwitter />, href: SocialLinks.TWITTER },
+    // { icon: <FaTwitter />, href: SocialLinks.TWITTER },
     { icon: <FaGithub />, href: SocialLinks.GITHUB },
     { icon: <FaLinkedin />, href: SocialLinks.LINKEDIN },
     { icon: <FaInstagram />, href: SocialLinks.INSTAGRAM },

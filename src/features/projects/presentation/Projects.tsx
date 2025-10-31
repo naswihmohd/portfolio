@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { projects } from '../data/projectData'
 import LoadImage from '@/general/components/LoadImage'
+import Link from 'next/link'
 
 function Projects() {
     return (
@@ -71,9 +72,9 @@ function Projects() {
 
                                         {/* View Details Button */}
                                         <div className="pt-2">
-                                            <button className="px-6 py-3 bg-gradient-to-r from-[#b97aff] to-[#6c2bd7] text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                            <Link href={`/projects/${project.id}`} className="px-6 py-3 bg-gradient-to-r from-[#b97aff] to-[#6c2bd7] text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                                                 View Details
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
 

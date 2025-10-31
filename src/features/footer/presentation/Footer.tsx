@@ -10,7 +10,7 @@ const Footer = () => {
         { icon: FaInstagram, label: "Instagram", href: SocialLinks.INSTAGRAM },
         { icon: FaFacebook, label: "Facebook", href: SocialLinks.FACEBOOK },
         { icon: FaWhatsapp, label: "WhatsApp", href: SocialLinks.WHATSAPP },
-        { icon: FaTwitter, label: "Twitter", href: SocialLinks.TWITTER },
+        // { icon: FaTwitter, label: "Twitter", href: SocialLinks.TWITTER },
     ];
     
     return (

@@ -32,26 +32,16 @@ export default function Contact() {
         return focusedField === fieldName || watchedFields[fieldName];
     };
 
+    const email = 'naswihkkv786@gmail.com';
+
     const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
-
-        try {
-            // Here you would typically send the email
-            // For now, we'll just log the data and simulate sending
-            console.log('Form data:', data);
-
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-            // Reset form after successful submission
-            reset();
-            alert('Message sent successfully!');
-        } catch (error) {
-            console.error('Error sending message:', error);
-            alert('Failed to send message. Please try again.');
-        } finally {
-            setIsSubmitting(false);
-        }
+        const message = `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\nMessage: ${data.message}`;
+        const subject = 'New Message from Contact Form';
+        const body = encodeURIComponent(message);
+        window.open(`mailto:${email}?subject=${subject}&body=${body}`, '_blank');
+        reset();
+        setIsSubmitting(false);
     };
 
     const socialLinks = [
