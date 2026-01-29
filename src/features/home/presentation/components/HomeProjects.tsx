@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LoadImage from "@/general/components/LoadImage";
 import { projects } from "@/features/projects/data/projectData";
 import Link from "next/link";
+import { AiOutlineCopyright } from "react-icons/ai";
 
 const HomeProjects = () => {
     const [current, setCurrent] = useState(0);
@@ -53,9 +54,15 @@ const HomeProjects = () => {
                     <div className="flex flex-col items-start justify-center text-left">
                         <span className="bg-black/70 text-white text-xs font-semibold px-3 py-1 rounded-lg mb-4">Showcase Projects</span>
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Where Creativity Builds Impact</h3>
-                        <p className="text-gray-300 text-base md:text-lg mb-6 max-w-lg">
+                        <p className="text-gray-300 text-base md:text-lg mb-3 max-w-lg">
                             Each project reflects creativity, passion, and the drive to craft impactful digital experiences.
                         </p>
+                        <div className="mb-6 flex items-center gap-2">
+                            <AiOutlineCopyright className="text-white" />
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                                Associated with <a href="https://totalx.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors hover:underline">TotalX</a>
+                            </p>
+                        </div>
                         <Link href="/projects" className="bg-gradient-to-r from-[#5e04c6] to-[#370471] hover:bg-gradient-to-l hover:from-[#370471] hover:to-[#5e04c6] transition-all duration-300 text-white font-semibold px-8 py-3 rounded-full shadow-lg cursor-pointer flex items-center gap-2 self-start md:self-auto">
                             Explore Projects
                             <span className="ml-2">→</span>

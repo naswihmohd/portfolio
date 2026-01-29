@@ -1,6 +1,7 @@
 import React from 'react'
 import { projects } from '../../data/projectData'
 import LoadImage from '@/general/components/LoadImage'
+import { AiOutlineCopyright } from 'react-icons/ai'
 
 function ProjectDetails({ projectId }: { projectId: string }) {
     const project = projects.find((p) => p.id === projectId)
@@ -34,18 +35,25 @@ function ProjectDetails({ projectId }: { projectId: string }) {
                     <span className="bg-black/70 text-white text-xs font-semibold px-3 py-1 rounded-lg mb-3 inline-block">Project Detail</span>
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">{project.title}</h1>
                     <p className="text-gray-300 text-sm md:text-base max-w-3xl">{project.description}</p>
+
+                    <div className="mb-6 mt-3 flex items-center gap-2">
+                        <AiOutlineCopyright className="text-white" />
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                            Associated with <a href="https://totalx.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors hover:underline">TotalX</a>
+                        </p>
+                    </div>
                 </div>
 
                 {/* Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     {/* Left: Image */}
                     <div className="lg:col-span-5">
-                            <LoadImage
-                                src={project.imageUrl?.src ?? ''}
-                                alt={project.title}
-                                index={0}
-                                className="w-full h-72 object-contain"
-                            />
+                        <LoadImage
+                            src={project.imageUrl?.src ?? ''}
+                            alt={project.title}
+                            index={0}
+                            className="w-full h-72 object-contain"
+                        />
                         {Array.isArray(project.features) && project.features.length > 0 && (
                             <div>
                                 <h3 className="text-lg md:text-xl font-semibold text-white my-4">Key Features</h3>

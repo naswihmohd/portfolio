@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { projects } from '../data/projectData'
 import LoadImage from '@/general/components/LoadImage'
 import Link from 'next/link'
+import { AiOutlineCopyright } from 'react-icons/ai'
 
 function Projects() {
     return (
@@ -69,6 +70,14 @@ function Projects() {
                                                 {project.description}
                                             </p>
                                         </div>
+
+                                        <div className="mb-6 flex items-center gap-2">
+                                            <AiOutlineCopyright className="text-white" />
+                                            <p className="text-gray-300 text-sm leading-relaxed">
+                                                Associated with <a href="https://totalx.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors hover:underline">TotalX</a>
+                                            </p>
+                                        </div>
+
 
                                         {/* View Details Button */}
                                         <div className="pt-2">
