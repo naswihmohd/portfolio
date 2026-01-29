@@ -10,7 +10,7 @@ function Home() {
         <div className='bg-gradient-to-br from-[#0d0924] via-[#0e0724] to-[#000000]'>
             <Hero />
             <ProfessionBar />
-            <HomeProjects />
+            {/* <HomeProjects /> */}
             <HomeAbout />
             <Contact />
 
