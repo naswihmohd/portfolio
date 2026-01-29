@@ -11,7 +11,7 @@
   "dependencies": {
     "framer-motion": "^12.23.6",
     "install": "^0.13.0",
-    "next": "15.4.3",
+    "next": "15.4.11",
     "npm": "^11.4.2",
     "react": "19.1.2",
     "react-dom": "19.1.2",
